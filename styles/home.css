@@ -1,0 +1,123 @@
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: 
+    linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(30, 30, 30, 0.6)),
+    url('../assets/bg.avif') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-blend-mode: overlay; /* Blending gradient with image */
+}
+
+/* Adding subtle floating particles animation */
+@keyframes floatParticles {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(20px, 20px);
+  }
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://www.transparenttextures.com/patterns/old-wall-1.png') repeat;
+  opacity: 0.05; /* Light overlay effect */
+  z-index: -1;
+  animation: floatParticles 10s infinite ease-in-out;
+}
+
+/* Heading Styling */
+h1 {
+  font-size: 3.5rem;  /* Adjusted to a more moderate size */
+  margin-bottom: 2rem;  /* Balanced margin */
+  color: white;
+  text-shadow: 3px 3px 8px rgba(0,0,0,0.7);  /* Ensures visibility on dark background */
+  font-weight: 700;  /* Bold text */
+  animation: slideIn 1s ease-out;
+}
+
+/* Button Styling */
+button {
+  padding: 20px 50px;  /* Adjusted padding */
+  font-size: 1.6rem;  /* Adjusted font size */
+  background: #e74c3c;  /* Red */
+  color: white;
+  border: none;
+  border-radius: 12px;  /* Slightly rounded corners */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 6px 15px rgba(0,0,0,0.5);
+  margin: 20px;
+}
+
+/* Button Hover Effect */
+button:hover {
+  background: #c0392b;  /* Darker Red */
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.7);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 3.2rem;
+    margin-bottom: 1.8rem;
+  }
+
+  button {
+    padding: 18px 45px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  button {
+    padding: 16px 40px;
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.4rem;
+    margin-bottom: 1.2rem;
+  }
+
+  button {
+    padding: 14px 35px;
+    font-size: 1.3rem;
+  }
+}
+
+/* Slide-in effect for headings */
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
