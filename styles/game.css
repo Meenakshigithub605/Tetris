@@ -23,6 +23,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    touch-action: none;
 }
 
 /* Home Screen */
@@ -61,6 +62,14 @@ body {
     background: var(--button-gradient-hover);
     transform: scale(1.1);
 }
+
+canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+}
+
 
 /* Game Screen */
 #game-screen {
