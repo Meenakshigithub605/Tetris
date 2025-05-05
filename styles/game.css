@@ -161,7 +161,6 @@ canvas {
         padding: 15px;
     }
 }
-
 /* Mobile Phones */
 @media (max-width: 480px) {
     body {
@@ -196,8 +195,10 @@ canvas {
         padding: 10px;
     }
 
+    /* Increase canvas height on mobile */
     #game-screen canvas {
-        width: 90vw;
-        height: 90vh;
+        width: 90vw;  /* Ensure width takes up most of the viewport */
+        height: 70vh; /* Set height to 70% of viewport height */
+        max-height: 70vh; /* Prevent it from being stretched larger */
     }
 }
