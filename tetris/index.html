@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Tetris Home</title>
+    <link rel="stylesheet" href="./styles/home.css" />
+</head>
+<body>
+    <div id="home-screen">
+        <h1>Let's Play Tetris</h1>
+        <button id="play-button">Play Game</button>
+    </div>
+
+    <!-- 🔊 Audio element for button click -->
+    <audio id="click-sound" src="./assets/button_click.mp3" preload="auto"></audio>
+
+    <script>
+        const button = document.getElementById('play-button');
+        const clickSound = document.getElementById('click-sound');
+
+        button.addEventListener('click', () => {
+            clickSound.currentTime = 0; // Rewind in case of rapid clicks
+            clickSound.play();
+
+            // Small delay before redirect so sound plays
+            setTimeout(() => {
+                window.location.href = 'game.html';
+            }, 200); // Adjust this if your sound is longer
+        });
+    </script>
+</body>
+</html>
