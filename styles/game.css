@@ -18,7 +18,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow-y: auto;  /* Enables vertical scrolling */
+    overflow:hidden;  /* Enables vertical scrolling */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,6 +35,8 @@ body {
     text-align: center;
     width: 100%;
     padding: 20px;
+    height: 100%; 
+    box-sizing: border-box;
 }
 
 /* Heading */
@@ -181,9 +183,12 @@ canvas {
         font-size: 0.9rem;
         width: 150px;
     }
+    #game-screen {
+        height: 100vh; /* Ensure game screen takes up full screen */
+    }
 
     #game-screen canvas {
-        width: 100%;
-        max-width: 300px;
+        width: 100%; /* Ensure canvas takes up full width */
+        height: 100%; /* Ensure canvas takes up full height */
     }
 }
