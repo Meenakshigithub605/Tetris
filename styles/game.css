@@ -18,7 +18,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow:hidden;  /* Enables vertical scrolling */
+    overflow: hidden;  /* Disable scrolling */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,30 +34,30 @@ body {
     align-items: center;
     text-align: center;
     width: 100%;
-    padding: 20px;
+    padding: 10px; /* Adjusted padding for mobile */
     height: 100%; 
     box-sizing: border-box;
 }
 
 /* Heading */
 #home-screen h1 {
-    font-size: 3rem;
+    font-size: 2.5rem; /* Reduced font size for mobile */
     color: var(--primary-color);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     text-shadow: var(--text-shadow);
 }
 
 /* Main Play Button */
 #home-screen button {
-    padding: 15px 40px;
-    font-size: 1.2rem;
+    padding: 12px 35px;
+    font-size: 1.1rem;
     color: #fff;
     background: var(--button-gradient);
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease;
-    width: 220px;
+    width: 200px;
 }
 
 #home-screen button:hover {
@@ -67,52 +67,52 @@ body {
 
 canvas {
     display: block;
-    width: 100vw;
-    height: 100vh;
+    width: 100vw;  /* Ensure it takes full width */
+    height: 100vh; /* Ensure it takes full height */
     background-color: black;
 }
-
 
 /* Game Screen */
 #game-screen {
     display: none;
     width: 100%;
-    padding: 20px;
+    padding: 0;
     text-align: center;
+    height: 100%;
 }
 
-/* Game Canvas - Made smaller for better layout */
+/* Game Canvas */
 #game-screen canvas {
     border: 2px solid #333;
     background-color: #000;
-    margin: 20px auto 0 auto;
+    margin: 0 auto;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
     display: block;
-    width: 70%;
-    max-width: 360px;
+    width: 90%;  /* Reduced width for mobile */
+    max-width: 300px;
     height: auto;
 }
 
 /* Score and Buttons */
 #score-container {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 #score {
-    font-size: 2rem;
+    font-size: 1.5rem;  /* Smaller font for mobile */
     color: var(--primary-color);
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     text-shadow: var(--text-shadow);
 }
 
 #score-container button {
-    padding: 12px 30px;
-    font-size: 1.2rem;
-    margin: 10px;
+    padding: 10px 25px;
+    font-size: 1rem;
+    margin: 8px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    width: 180px;
+    width: 160px;
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
@@ -147,8 +147,8 @@ canvas {
     }
 
     #game-screen canvas {
-        width: 85%;
-        max-width: 320px;
+        width: 80%;
+        max-width: 280px;
     }
 
     #score-container button {
@@ -156,39 +156,36 @@ canvas {
         font-size: 1rem;
         width: 160px;
     }
-
-    #game-screen {
-        padding: 15px;
-    }
 }
 
 /* Mobile Phones */
 @media (max-width: 480px) {
     body {
-        padding: 10px;
+        padding: 0; /* Ensure no extra padding */
     }
 
     #home-screen h1 {
-        font-size: 1.8rem;
+        font-size: 1.8rem; /* Reduce font size */
     }
 
     #home-screen button {
         padding: 10px 25px;
-        font-size: 0.9rem;
+        font-size: 1rem;
         width: 180px;
     }
 
     #score-container button {
         padding: 8px 20px;
-        font-size: 0.9rem;
+        font-size: 1rem;
         width: 150px;
     }
+
     #game-screen {
         height: 100vh; /* Ensure game screen takes up full screen */
     }
 
     #game-screen canvas {
-        width: 100%; /* Ensure canvas takes up full width */
-        height: 100%; /* Ensure canvas takes up full height */
+        width: 85%; /* Reduced width for mobile */
+        height: 70vh; /* Adjust height to fit the screen without scrolling */
     }
 }
