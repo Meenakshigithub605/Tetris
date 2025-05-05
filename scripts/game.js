@@ -203,7 +203,44 @@ document.addEventListener('keydown', function (event) {
 
     drawBoard();
 });
+// ✅ Handle swipe gestures for mobile
+let touchStartX = 0;
+let touchStartY = 0;
+let touchEndX = 0;
+let touchEndY = 0;
 
+function handleGesture() {
+    const dx = touchEndX - touchStartX;
+    const dy = touchEndY - touchStartY;
+
+    if (Math.abs(dx) > Math.abs(dy)) {
+        if (dx > 30) {
+            moveRight();
+        } else if (dx < -30) {
+            moveLeft();
+        }
+    } else {
+        if (dy > 30) {
+            moveDown();
+        } else if (dy < -30) {
+            rotatePiece();
+        }
+    }
+
+    drawBoard();
+}
+
+document.addEventListener("touchstart", function (e) {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+});
+
+document.addEventListener("touchend", function (e) {
+    touchEndX = e.changedTouches[0].screenX;
+    touchEndY = e.changedTouches[0].screenY;
+    handleGesture();
+});
+ 
 // Restart game
 document.getElementById('restart-button').addEventListener('click', () => {
     playClickSound();
