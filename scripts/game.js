@@ -229,17 +229,19 @@ function handleGesture() {
 
     drawBoard();
 }
-
 document.addEventListener("touchstart", function (e) {
-    touchStartX = e.changedTouches[0].screenX;
-    touchStartY = e.changedTouches[0].screenY;
-});
+    e.preventDefault(); // prevent scroll
+    touchStartX = e.changedTouches[0].clientX;
+    touchStartY = e.changedTouches[0].clientY;
+}, { passive: false });
 
 document.addEventListener("touchend", function (e) {
-    touchEndX = e.changedTouches[0].screenX;
-    touchEndY = e.changedTouches[0].screenY;
+    e.preventDefault();
+    touchEndX = e.changedTouches[0].clientX;
+    touchEndY = e.changedTouches[0].clientY;
     handleGesture();
-});
+}, { passive: false });
+
  
 // Restart game
 document.getElementById('restart-button').addEventListener('click', () => {
